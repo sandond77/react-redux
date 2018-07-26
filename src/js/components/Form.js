@@ -59,6 +59,6 @@ class ConnectedForm extends Component {
     }
 }
 
-const Form = connect(null, mapDispatchToProps)(ConnectedForm);
+const Form = connect(null, mapDispatchToProps)(ConnectedForm); //this is null because mapStateToProps isnt being used first prior to connect??
 
 export default Form;
