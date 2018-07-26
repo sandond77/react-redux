@@ -3,7 +3,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import uuidv1 from "uuid"; 
-import { addArticle } from "../actions/redux";
+import { addArticle } from "../actions/index";
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -20,7 +20,7 @@ class ConnectedForm extends Component {
         }
 
         this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit - this.handleSubmit.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event){
@@ -33,7 +33,7 @@ class ConnectedForm extends Component {
         event.preventDefault();
         const { title } = this.state;
         const id = uuidv1();
-        this.props.addArticle({ title,id });
+        this.props.addArticle({ title, id });
         this.setState ({ title: "" });
     }
 
@@ -51,7 +51,7 @@ class ConnectedForm extends Component {
                         onChange={this.handleChange}
                     />
                 </div>
-                <button type="submit" className="btn btn-success btn=lg">
+                <button type="submit" className="btn btn-success btn-lg">
                     Save
                 </button>
             </form>
